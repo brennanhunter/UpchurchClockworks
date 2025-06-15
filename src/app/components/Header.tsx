@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence, easeInOut } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Clock from 'react-clock';
 import 'react-clock/dist/Clock.css';
 
@@ -21,13 +21,12 @@ const UpchurchClockworksHeader = ({ isMenuOpen, setIsMenuOpen }: HeaderProps) =>
     return () => clearInterval(timer);
   }, []);
 
-
   if (!isMounted) return null;
 
   return (
     <div ref={containerRef} className="relative w-full h-0">
       <AnimatePresence mode="wait">
-        {/* Closed state - Floating clock menu button */}
+        {/* Desktop: Closed state - Floating clock menu button */}
         {!isMenuOpen && (
           <motion.div
             key="closed"
@@ -43,7 +42,7 @@ const UpchurchClockworksHeader = ({ isMenuOpen, setIsMenuOpen }: HeaderProps) =>
               } 
             }}
             exit={{ x: 100, opacity: 0 }}
-            className="fixed top-1/2 right-0 transform -translate-y-1/2 z-50"
+            className="hidden md:block fixed top-1/2 right-0 transform -translate-y-1/2 z-50"
             style={{ height: '80vh' }}
           >
             <motion.button
@@ -118,6 +117,38 @@ const UpchurchClockworksHeader = ({ isMenuOpen, setIsMenuOpen }: HeaderProps) =>
               >
                 MENU
               </motion.span>
+            </motion.button>
+          </motion.div>
+        )}
+
+        {/* Mobile: Simple hamburger menu */}
+        {!isMenuOpen && (
+          <motion.div
+            key="mobile-closed"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.3 }}
+            className="md:hidden fixed top-4 right-4 z-50"
+          >
+            <motion.button
+              onClick={() => setIsMenuOpen(true)}
+              className="p-3 bg-amber-500/90 backdrop-blur-sm rounded-full border-2 border-amber-400 shadow-lg"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Open menu"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-black">
+                <motion.path
+                  d="M3 12h18M3 6h18M3 18h18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                />
+              </svg>
             </motion.button>
           </motion.div>
         )}
@@ -399,8 +430,6 @@ const UpchurchClockworksHeader = ({ isMenuOpen, setIsMenuOpen }: HeaderProps) =>
       {/* Global styles */}
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Orbitron:wght@400;700&display=swap');
-        
-
         
         .custom-react-clock {
           .react-clock__face {
