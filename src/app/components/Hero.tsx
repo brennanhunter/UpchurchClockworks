@@ -128,7 +128,7 @@ const HeroSection = ({ time }: HeroSectionProps) => {
             Expert restoration & repair services in Central Texas
           </p>
           <p className="text-lg text-amber-400 mb-12 font-cinzel tracking-wide italic">
-            "Timepieces restored to their original elegance"
+            &quot;Timepieces restored to their original elegance&quot;
           </p>
         </motion.div>
 

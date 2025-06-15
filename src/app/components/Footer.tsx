@@ -84,7 +84,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Upchurch Clockworks - All Rights Reserved
           </p>
           <p className="text-amber-400 font-cinzel italic mb-4">
-            "Preserving Time's Legacy"
+            &quot;Preserving Time&apos;s Legacy&quot;
           </p>
           <p className="text-xs">
             <a

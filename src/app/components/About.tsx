@@ -34,13 +34,13 @@ const AboutSection = () => {
             </h2>
             <div className="w-24 h-1 bg-amber-500 mb-8"></div>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              At Upchurch Clockworks, we understand that clocks are more than timekeepers—they're 
+              At Upchurch Clockworks, we understand that clocks are more than timekeepers—they&apos;re 
               cherished heirlooms and historical artifacts. Under the expert guidance of Ryan Upchurch, 
               our team blends centuries-old horological techniques with modern precision.
             </p>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
               Each timepiece receives individualized attention, from initial assessment to final 
-              calibration. Our commitment to excellence has made us Central Texas' premier clock 
+              calibration. Our commitment to excellence has made us Central Texas&apos; premier clock 
               restoration service.
             </p>
             

@@ -74,7 +74,7 @@ const TestimonialsSection = ({ activeTestimonial, setActiveTestimonial }: Testim
                   <Star key={i} className="w-5 h-5 text-amber-500 fill-current" />
                 ))}
               </div>
-              <blockquote className="text-gray-300 mb-6 italic text-lg leading-relaxed">"{testimonial.text}"</blockquote>
+              <blockquote className="text-gray-300 mb-6 italic text-lg leading-relaxed">&quot;{testimonial.text}&quot;</blockquote>
               <div className="mt-auto">
                 <p className="text-amber-400 font-semibold">— {testimonial.name}</p>
                 <p className="text-gray-400 text-sm">{testimonial.location}</p>
@@ -101,7 +101,7 @@ const TestimonialsSection = ({ activeTestimonial, setActiveTestimonial }: Testim
                       <Star key={i} className="w-5 h-5 text-amber-500 fill-current" />
                     ))}
                   </div>
-                  <blockquote className="text-gray-300 mb-6 italic">"{testimonial.text}"</blockquote>
+                  <blockquote className="text-gray-300 mb-6 italic">&quot;{testimonial.text}&quot;</blockquote>
                   <div className="mt-auto">
                     <p className="text-amber-400 font-semibold">— {testimonial.name}</p>
                     <p className="text-gray-400 text-sm">{testimonial.location}</p>

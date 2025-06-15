@@ -21,30 +21,6 @@ const UpchurchClockworksHeader = ({ isMenuOpen, setIsMenuOpen }: HeaderProps) =>
     return () => clearInterval(timer);
   }, []);
 
-  // Animation variants
-  const drawPath = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: { 
-      pathLength: 1, 
-      opacity: 1,
-      transition: { 
-        duration: 1.5, 
-        ease: easeInOut,
-        delay: 0.3
-      }
-    }
-  };
-
-  const gearRotate = {
-    animate: {
-      rotate: 360,
-      transition: {
-        duration: 30,
-        repeat: Infinity,
-        ease: "linear"
-      }
-    }
-  };
 
   if (!isMounted) return null;
 
@@ -276,7 +252,7 @@ const UpchurchClockworksHeader = ({ isMenuOpen, setIsMenuOpen }: HeaderProps) =>
                       { href: '/collection', label: 'COLLECTION' },
                       { href: '/heritage', label: 'OUR HERITAGE' },
                       { href: '/contact', label: 'CONTACT US' }
-                    ].map((item, index) => (
+                    ].map((item) => (
                       <motion.div
                         key={item.label}
                         variants={{
